@@ -5,9 +5,54 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  padding: 1em;
+  margin: 0 0 1em;
+  height: fit-content;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(215, 165, 165, 0.2);
+}
+
+.container {
+  padding: 0 1em;
+  margin: 0;
+  columns: 4;
+  height: obj;
+
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #000000;
+    color: white;
+  }
+
+  .card {
+    background-color: #1f2121;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    padding: 1em;
+    margin: 0 0 1em;
+  }
 }
