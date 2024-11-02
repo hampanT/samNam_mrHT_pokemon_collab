@@ -1,40 +1,21 @@
 import './App.css';
-import PokéDex from './images/pokedex.png'
-
-const PokemonImage = ({id}) => {
-  return (
-    <img
-      src={`${process.env.PUBLIC_URL}/images/showdown/${id}.gif`} 
-      alt={`Pokemon ${id}`}
-      />
-  );
-};
-
-const PokeCard = ({ id, name }) => {
-    return (
-      <div className="card">
-        <PokemonImage id={id}/>
-        <div className="card-wrapper">
-          <h3> {name} </h3>
-        </div>
-      </div>
-    )
-}
+import React from 'react';
+import PokéDex from './images/pokedex.png';
+import { Link, Route, Routes } from 'react-router-dom';
+import { PokemonGallery } from './Components/PokemonGallery';
+import { PokemonDetails } from './Components/PokemonDetails';
 
 function App() {
   return (
-    <div className="App">
-      <img src={PokéDex} alt="pokedex"></img>
-      <div className="container">
-      <PokeCard id={2} name={"Test"}/>
-      <PokeCard id={10} name={"Test10"}/>
-      <PokeCard id={6} name={"Test"}/>
-      <PokeCard id={9} name={"Test"}/>
-      <PokeCard id={1} name={"Test"}/>
-      <PokeCard id={2} name={"Test10"}/>
-      <PokeCard id={3} name={"Test123"}/>
-      <PokeCard id={100} name={"Test123123123"}/>
-      </div>
+    <div>
+      <Link to="/">
+        <img src={PokéDex} alt="pokedex" style={{ cursor: 'pointer' }} />
+      </Link>
+      
+      <Routes>
+        <Route path="/" element={<PokemonGallery />} />
+        <Route path="/pokemon/:id" element={<PokemonDetails />} />
+      </Routes>
     </div>
   );
 }
